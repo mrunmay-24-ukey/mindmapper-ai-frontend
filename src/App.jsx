@@ -7,7 +7,7 @@ import { InputPanel } from './components/InputPanel';
 import { MindMapCanvas } from './components/MindMapCanvas';
 import { Home } from './pages/Home';
 
-const API_URL = ' https://mindmapper-ai-backend.onrender.com';
+const API_URL = 'https://mindmapper-ai-backend.onrender.com/api';
 
 function App() {
   const [showInputPanel, setShowInputPanel] = useState(true);
@@ -21,7 +21,7 @@ function App() {
     setError(null);
   };
 
-  const handleContentSubmit = async (content) => {
+  const handleContentSubmit = async (content, type) => {
     setIsProcessing(true);
     setError(null);
     try {
@@ -31,7 +31,7 @@ function App() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ content, type: 'text' }),
+        body: JSON.stringify({ content, type }),
       });
 
       const data = await response.json();
