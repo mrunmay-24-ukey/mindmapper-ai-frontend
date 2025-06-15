@@ -7,7 +7,7 @@ import { InputPanel } from './components/InputPanel';
 import { MindMapCanvas } from './components/MindMapCanvas';
 import { Home } from './pages/Home';
 
-const API_URL = 'https://mindmapper-ai-backend.onrender.com/';
+const API_URL = ' https://mindmapper-ai-backend.onrender.com';
 
 function App() {
   const [showInputPanel, setShowInputPanel] = useState(true);
